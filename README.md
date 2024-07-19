@@ -21,7 +21,7 @@ To use this module, you should have Terraform installed and configured for AWS. 
 ### Basic Example
 ```hcl
 module "alarm" {
-  source      = "git::https://github.com/opsstation/terraform-aws-cloudwatch-alarms.git?ref=v1.0.0"
+  source      = "git::https://github.com/yadavprakash/terraform-aws-cloudwatch-alarms.git?ref=v1.0.0"
 
   name        = "alarm"
   environment = "test"
@@ -49,7 +49,7 @@ module "alarm" {
 ### Anomaly Example
 ```hcl
 module "alarm" {
-  source      = "git::https://github.com/opsstation/terraform-aws-cloudwatch-alarms.git?ref=v1.0.0"
+  source      = "git::https://github.com/yadavprakash/terraform-aws-cloudwatch-alarms.git?ref=v1.0.0"
 
   name        = "alarm"
   environment = "test"
@@ -88,7 +88,7 @@ module "alarm" {
 ### Epression Example
 ```hcl
 module "alarm" {
-  source      = "git::https://github.com/opsstation/terraform-aws-cloudwatch-alarms.git?ref=v1.0.0"
+  source      = "git::https://github.com/yadavprakash/terraform-aws-cloudwatch-alarms.git?ref=v1.0.0"
   name        = "alarm"
   environment = "test"
   label_order = ["name", "environment"]
@@ -137,14 +137,14 @@ module "alarm" {
 ```
 
 ## Examples
-For detailed examples on how to use this module, please refer to the [examples](https://github.com/opsstation/terraform-aws-cloudwatch-alarms/tree/master/_example) directory within this repository.
+For detailed examples on how to use this module, please refer to the [examples](https://github.com/yadavprakash/terraform-aws-cloudwatch-alarms/tree/master/_example) directory within this repository.
 
 ## License
-This Terraform module is provided under the **MIT** License. Please see the [LICENSE](https://github.com/opsstation/terraform-aws-cloudwatch-alarms/blob/master/LICENSE) file for more details.
+This Terraform module is provided under the **MIT** License. Please see the [LICENSE](https://github.com/yadavprakash/terraform-aws-cloudwatch-alarms/blob/master/LICENSE) file for more details.
 
 ## Author
 Your Name
-Replace **MIT** and **opsstation** with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
+Replace **MIT** and **yadavprakash** with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
@@ -164,7 +164,7 @@ Replace **MIT** and **opsstation** with the appropriate license and your informa
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_labels"></a> [labels](#module\_labels) | git::https://github.com/opsstation/terraform-aws-labels.git | v1.0.0 |
+| <a name="module_labels"></a> [labels](#module\_labels) | git::https://github.com/yadavprakash/terraform-aws-labels.git | v1.0.0 |
 
 ## Resources
 
@@ -190,7 +190,7 @@ Replace **MIT** and **opsstation** with the appropriate license and your informa
 | <a name="input_expression_enabled"></a> [expression\_enabled](#input\_expression\_enabled) | Enable alarm with expression. | `bool` | `false` | no |
 | <a name="input_insufficient_data_actions"></a> [insufficient\_data\_actions](#input\_insufficient\_data\_actions) | The list of actions to execute when this alarm transitions into an INSUFFICIENT\_DATA state from any other state. | `list(any)` | `[]` | no |
 | <a name="input_label_order"></a> [label\_order](#input\_label\_order) | Label order, e.g. `name`,`application`. | `list(any)` | `[]` | no |
-| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'opsstation'. | `string` | `"opsstation"` | no |
+| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'yadavprakash'. | `string` | `"yadavprakash"` | no |
 | <a name="input_metric_name"></a> [metric\_name](#input\_metric\_name) | The name for the alarm's associated metric. | `string` | `"CPUUtilization"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name  (e.g. `app` or `cluster`). | `string` | `""` | no |
 | <a name="input_namespace"></a> [namespace](#input\_namespace) | The namespace for the alarm's associated metric. | `string` | `"AWS/EC2"` | no |
@@ -198,7 +198,7 @@ Replace **MIT** and **opsstation** with the appropriate license and your informa
 | <a name="input_period"></a> [period](#input\_period) | The period in seconds over which the specified statistic is applied. | `number` | `120` | no |
 | <a name="input_query_expressions"></a> [query\_expressions](#input\_query\_expressions) | values for metric query expression. | `list(any)` | <pre>[<br>  {<br>    "expression": "ANOMALY_DETECTION_BAND(m1)",<br>    "id": "e1",<br>    "label": "CPUUtilization (Expected)",<br>    "return_data": "true"<br>  }<br>]</pre> | no |
 | <a name="input_query_metrics"></a> [query\_metrics](#input\_query\_metrics) | values for metric query metrics. | `list(any)` | <pre>[<br>  {<br>    "dimensions": {<br>      "InstanceId": "i-abc123"<br>    },<br>    "id": "m1",<br>    "metric_name": "CPUUtilization",<br>    "namespace": "AWS/EC2",<br>    "period": "120",<br>    "return_data": "true",<br>    "stat": "Average",<br>    "unit": "Count"<br>  }<br>]</pre> | no |
-| <a name="input_repository"></a> [repository](#input\_repository) | Terraform current module repo | `string` | `"https://github.com/opsstation/terraform-aws-cloudwatch-alarms"` | no |
+| <a name="input_repository"></a> [repository](#input\_repository) | Terraform current module repo | `string` | `"https://github.com/yadavprakash/terraform-aws-cloudwatch-alarms"` | no |
 | <a name="input_statistic"></a> [statistic](#input\_statistic) | The statistic to apply to the alarm's associated metric. | `string` | `"Average"` | no |
 | <a name="input_threshold"></a> [threshold](#input\_threshold) | The value against which the specified statistic is compared. | `number` | `40` | no |
 | <a name="input_threshold_metric_id"></a> [threshold\_metric\_id](#input\_threshold\_metric\_id) | If this is an alarm based on an anomaly detection model, make this value match the ID of the ANOMALY\_DETECTION\_BAND function. | `string` | `""` | no |
