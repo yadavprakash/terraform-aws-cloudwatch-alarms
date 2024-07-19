@@ -9,7 +9,7 @@ provider "aws" {
 ## A VPC is a virtual network that closely resembles a traditional network that you'd operate in your own data center.
 ##--------------------------------------------------------------------------------------------------------------------------
 module "vpc" {
-  source      = "git::https://github.com/opsstation/terraform-aws-vpc.git?ref=v1.0.0"
+  source      = "git::https://github.com/yadavprakash/terraform-aws-vpc.git?ref=v1.0.0"
   name        = "vpc"
   environment = "test"
   label_order = ["name", "environment"]
@@ -20,7 +20,7 @@ module "vpc" {
 ## A subnet is a range of IP addresses in your VPC.
 ##-----------------------------------------------------
 module "public_subnets" {
-  source      = "git::https://github.com/opsstation/terraform-aws-subnet.git?ref=v1.0.0"
+  source      = "git::https://github.com/yadavprakash/terraform-aws-subnet.git?ref=v1.0.0"
   name        = "public-subnet"
   environment = "test"
   label_order = ["name", "environment"]
@@ -37,7 +37,7 @@ module "public_subnets" {
 ## Amazon EC2 provides cloud hosted virtual machines, called "instances", to run applications.
 ##-----------------------------------------------------
 module "ec2" {
-  source      = "git::https://github.com/opsstation/terraform-aws-ec2?ref=v1.0.0"
+  source      = "git::https://github.com/yadavprakash/terraform-aws-ec2?ref=v1.0.0"
   name        = "alarm"
   environment = "test"
   label_order = ["name", "environment"]
